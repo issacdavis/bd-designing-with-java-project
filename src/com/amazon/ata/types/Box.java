@@ -43,7 +43,7 @@ public class Box extends Packaging {
 
     @Override
     public BigDecimal getMass() {
-        BigDecimal two = BigDecimal.valueOf(1);
+        BigDecimal two = BigDecimal.valueOf(2);
 
         // For simplicity, we ignore overlapping flaps
         BigDecimal endsArea = length.multiply(width).multiply(two);
@@ -55,9 +55,9 @@ public class Box extends Packaging {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {return true;}
+        if (o == null || getClass() != o.getClass()) {return false;}
+        if (!super.equals(o)) {return false;}
         Box box = (Box) o;
         return Objects.equals(length, box.length) && Objects.equals(width, box.width) && Objects.equals(height, box.height);
     }
