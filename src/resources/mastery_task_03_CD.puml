@@ -1,0 +1,38 @@
+@startuml
+title Sustainable Packaging Service
+
+class Packaging {
+  -material: Material
+  +getMass(): BigDecimal
+  +canFitItem(Item): boolean
+  +equals(Object): boolean
+  +hashCode(): int
+}
+
+class Box {
+    -length: BigDecimal
+    -width: BigDecimal
+    -height: BigDecimal
+    +canFitItem(Item): boolean
+    +equals(Object): boolean
+    +hashCode(): int
+}
+
+class PolyBag {
+    -material: Material
+    -volume: BigDecimal
+    +canFitItem(Item): boolean
+    +equals(Object): boolean
+    +hashCode(): int
+}
+
+enum Material {
+  + CORRUGATE
+  + LAMINATED_PLASTIC
+}
+
+Packaging *- Material
+Box --|> Packaging
+PolyBag --|> Packaging
+
+@enduml
