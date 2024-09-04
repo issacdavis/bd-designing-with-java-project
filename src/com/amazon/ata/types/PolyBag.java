@@ -36,9 +36,15 @@ public class PolyBag extends Packaging {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {return true;}
-        if (o == null || getClass() != o.getClass()) {return false;}
-        if (!super.equals(o)) {return false;}
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         PolyBag polybag = (PolyBag) o;
         return material == polybag.material && Objects.equals(volume, polybag.volume);
     }
