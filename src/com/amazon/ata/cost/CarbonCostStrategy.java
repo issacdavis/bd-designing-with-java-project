@@ -13,8 +13,6 @@ import java.math.BigDecimal;
 public class CarbonCostStrategy implements CostStrategy {
     private PolyBag polyBag;
     private Box box;
-    private static final BigDecimal CARBON_UNITS_PER_GRAM_CORRUGATE = new BigDecimal("0.017");
-    private static final BigDecimal CARBON_UNITS_PER_GRAM_LAMINATED_PLASTIC = new BigDecimal("0.012");
     @Override
     public ShipmentCost getCost(ShipmentOption shipmentOption) {
         Packaging packaging = shipmentOption.getPackaging();
