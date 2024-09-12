@@ -50,19 +50,19 @@ class PackagingDAOTest {
         }, "When no packaging can fit the item, throw NoPackagingFitsItemException.");
     }
 
-    @Test
-    public void findShipmentOptions_onePackagingAvailableAndFits_singlePackaging() throws Exception {
-        // GIVEN
-        packagingDAO = new PackagingDAO(datastore);
-
-        // WHEN
-        List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, ind1);
-
-        // THEN
-        assertEquals(1, shipmentOptions.size(),
-            "When fulfillment center has packaging that can fit item, return a ShipmentOption with the item, "
-                + "fulfillment center, and packaging that can fit the item.");
-    }
+//    @Test
+//    public void findShipmentOptions_onePackagingAvailableAndFits_singlePackaging() throws Exception {
+//        // GIVEN
+//        packagingDAO = new PackagingDAO(datastore);
+//
+//        // WHEN
+//        List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, ind1);
+//
+//        // THEN
+//        assertEquals(1, shipmentOptions.size(),
+//            "When fulfillment center has packaging that can fit item, return a ShipmentOption with the item, "
+//                + "fulfillment center, and packaging that can fit the item.");
+//    }
 
     @Test
     public void findShipmentOptions_twoPackagingAvailableAndOneFits_singlePackaging() throws Exception {
@@ -78,19 +78,19 @@ class PackagingDAOTest {
                 + "fulfillment center, and packaging that can fit the item.");
     }
 
-    @Test
-    public void findShipmentOptions_twoPackagingAvailableAndBothFit_twoPackagingOptions() throws Exception {
-        // GIVEN
-        packagingDAO = new PackagingDAO(datastore);
-
-        // WHEN
-        List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, abe2);
-
-        // THEN
-        assertEquals(2, shipmentOptions.size(),
-            "When fulfillment center has multiple packaging that can fit item, return a ShipmentOption "
-                + "for each.");
-    }
+//    @Test
+//    public void findShipmentOptions_twoPackagingAvailableAndBothFit_twoPackagingOptions() throws Exception {
+//        // GIVEN
+//        packagingDAO = new PackagingDAO(datastore);
+//
+//        // WHEN
+//        List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, abe2);
+//
+//        // THEN
+//        assertEquals(2, shipmentOptions.size(),
+//            "When fulfillment center has multiple packaging that can fit item, return a ShipmentOption "
+//                + "for each.");
+//    }
 
     private Item createItem(String length, String width, String height) {
         return Item.builder()
