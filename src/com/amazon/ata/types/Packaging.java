@@ -16,20 +16,6 @@ public class Packaging {
      */
     private Material material;
 
-    /**
-     * This packaging's length.
-     */
-//    private BigDecimal length;
-//
-//    /**
-//     * This packaging's smallest dimension.
-//     */
-//    private BigDecimal width;
-//
-//    /**
-//     * This packaging's largest dimension.
-//     */
-//    private BigDecimal height;
 
     /**
      * Instantiates a new Packaging object.
@@ -60,6 +46,9 @@ public class Packaging {
      * @return the mass of the packaging
      */
     public BigDecimal getMass() {
+//        if (material.equals(Material.CORRUGATE)) {
+//            return
+//        }
         throw new UnsupportedOperationException();
     }
 

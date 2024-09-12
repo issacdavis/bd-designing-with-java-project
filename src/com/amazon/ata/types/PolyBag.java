@@ -34,6 +34,10 @@ public class PolyBag extends Packaging {
         return BigDecimal.valueOf(Math.ceil(Math.sqrt(volume.doubleValue()) * 0.6));
     }
 
+    public BigDecimal getVolume() {
+        return volume;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
