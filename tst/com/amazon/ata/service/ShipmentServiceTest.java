@@ -70,22 +70,22 @@ class ShipmentServiceTest {
         assertNotNull(shipmentOption);
     }
 
-//    @Test
-//    void findBestShipmentOption_existentFCAndItemCannotFit_returnsShipmentOption() throws UnknownFulfillmentCenterException, NoPackagingFitsItemException {
-//        // GIVEN & WHEN
-//        List<ShipmentOption> result = new ArrayList<>();
-//        result.add(ShipmentOption.builder()
-//                .withItem(largeItem)
-//                .withFulfillmentCenter(existentFC)
-//                .build());
-//        ShipmentOption shipmentOption = shipmentService.findShipmentOption(largeItem, existentFC);
-//
-//        // Mocking Behavior
-//        when(packagingDAO.findShipmentOptions(largeItem, existentFC)).thenReturn(result);
-//
-//        // THEN
-//        assertNull(shipmentOption);
-//    }
+    @Test
+    void findBestShipmentOption_existentFCAndItemCannotFit_returnsShipmentOption() throws UnknownFulfillmentCenterException, NoPackagingFitsItemException {
+        // GIVEN & WHEN
+        List<ShipmentOption> result = new ArrayList<>();
+        result.add(ShipmentOption.builder()
+                .withItem(largeItem)
+                .withFulfillmentCenter(existentFC)
+                .build());
+        ShipmentOption shipmentOption = shipmentService.findShipmentOption(largeItem, existentFC);
+
+        // Mocking Behavior
+        when(packagingDAO.findShipmentOptions(largeItem, existentFC)).thenReturn(result);
+
+        // THEN
+        assertNull(shipmentOption);
+    }
 
     @Test
     void findBestShipmentOption_nonExistentFCAndItemCanFit_returnsShipmentOption() throws UnknownFulfillmentCenterException, NoPackagingFitsItemException {
