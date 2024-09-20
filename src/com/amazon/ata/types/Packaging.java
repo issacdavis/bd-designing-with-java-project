@@ -46,9 +46,6 @@ public class Packaging {
      * @return the mass of the packaging
      */
     public BigDecimal getMass() {
-//        if (material.equals(Material.CORRUGATE)) {
-//            return
-//        }
         throw new UnsupportedOperationException();
     }
 
