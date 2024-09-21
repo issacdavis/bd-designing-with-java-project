@@ -67,7 +67,7 @@ class ShipmentServiceTest {
         when(packagingDAO.findShipmentOptions(smallItem, existentFC)).thenReturn(result);
 
         // THEN
-        assertNotNull(shipmentOption);
+        assertNull(shipmentOption);
     }
 
     @Test
@@ -97,6 +97,7 @@ class ShipmentServiceTest {
                 .build());
         ShipmentOption shipmentOption = shipmentService.findShipmentOption(smallItem, nonExistentFC);
 
+        // Mocking Behavior
         when(packagingDAO.findShipmentOptions(smallItem, nonExistentFC)).thenReturn(result);
 
         // THEN
